@@ -4,6 +4,8 @@ It's more than just a job, it's a career.
 
 Career provides persistent data to supplement your background jobs providing insight into things like status, percent complete, started at, and stopped at. Combined with ActionCable, it can provide a powerful UI for your background jobs.
 
+**Currently, we only support [Resque](https://github.com/resque/resque).**
+
 ## Usage
 
 ### Tasks
@@ -120,6 +122,18 @@ Add the following line to your Manifest if you're using Rails 6
 ```
 # app/assets/config/manifest.js
 //= link career/application.css
+```
+
+### Want a free UI?
+
+If you want to use our built-in UI, then add this to your `config/routes.rb`:
+
+```
+Rails.application.routes.draw do
+  ...
+  mount Career::Engine => "/career"
+  ...
+end
 ```
 
 ## Contributing
