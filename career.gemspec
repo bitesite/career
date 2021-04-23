@@ -6,8 +6,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["Casey Li"]
   spec.email       = ["casey.li@itesite.ca"]
   spec.homepage    = "https://github.com/bitesite/career"
-  spec.summary     = "Persistent tracking of Background jobs."
-  spec.description = "Persistent tracking of Background jobs."
+  spec.summary     = "Persistent tracking of background jobs."
+  spec.description = "Career provides a Rails engine to track background jobs."
   spec.license     = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage
@@ -21,6 +21,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rails", "~> 6.1.3", ">= 6.1.3.1"
   spec.add_dependency "resque", '~> 2.0'
 
-  spec.add_development_dependency "rspec-rails"
-  spec.add_development_dependency "factory_bot_rails"
+  spec.add_development_dependency "rspec-rails", "~> 5.0"
+  spec.add_development_dependency "factory_bot_rails", "~> 6.1"
 end
