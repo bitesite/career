@@ -9,6 +9,7 @@
       <th>Started at</th>
       <th>Completed at</th>
       <th>% complete</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
         <td><%= task.started_at %></td>
         <td><%= task.completed_at %></td>
         <td><%= task.percent_complete %></td>
+        <td><%= link_to 'View', task %></td>
       </tr>
     <% end %>    
   </tbody>

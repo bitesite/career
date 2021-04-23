@@ -1,1 +1,16 @@
-<h1>Task</h1>
+<h1>Task <%= @task.id %></h1>
+
+<%= @task.description %><br />
+<%= @task.status %><br />
+<%= @task.started_at %><br />
+<%= @task.completed_at %><br />
+<%= @task.percent_complete %><br />
+
+<h2>Log</h2>
+<div>
+  <% @task.task_log_entries.chronological.each do |task_log_entry| %>
+    <div>
+      <%= "#{[task_log_entry.created_at]} - #{task_log_entry.content}" %>
+    </div>
+  <% end %>
+</div>

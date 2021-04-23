@@ -26,7 +26,7 @@ module Career
       Resque.enqueue_at(scheduled_date, class_name.constantize, id, *params)
     end
 
-    def log_task_log_entry(content, entry_type='info', data=nil)
+    def log(content, entry_type='info', data=nil)
       task_log_entry = task_log_entries.create(content: content, entry_type: entry_type, data: data)    
       
       # TODO: Implement
