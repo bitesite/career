@@ -19,13 +19,11 @@ module Career
     end
 
     def enqueue
-      # TODO: Implement
-      #Resque.enqueue(class_name.constantize, id, *params)
+      Resque.enqueue(class_name.constantize, id, *params)
     end
 
     def enqueue_at(scheduled_date)
-      # TODO: Implement
-      #Resque.enqueue_at(scheduled_date, class_name.constantize, id, *params)
+      Resque.enqueue_at(scheduled_date, class_name.constantize, id, *params)
     end
 
     def log_task_log_entry(content, entry_type='info', data=nil)
