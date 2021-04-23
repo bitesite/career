@@ -4,3 +4,16 @@
 /pkg/
 /tmp/
 .byebug_history
+
+# Dummy App
+spec/dummy/config/database.yml
+spec/dummy/db/migrate/*
+spec/dummy/db/schema.rb
+spec/dummy/.bundle/
+spec/dummy/doc/
+spec/dummy/log/*.log
+spec/dummy/pkg/
+spec/dummy/tmp/
+spec/dummy.byebug_history
+
+*.DS_Store
