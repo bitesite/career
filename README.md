@@ -22,7 +22,7 @@ task.enqueue
 
 ### Writing jobs for Tasks
 
-To make your background jobs compatible with `Career::Task`, you'll want the first argument to be `task_id`.
+`Career::Task#enqueue` always passes in its own ID as the first argument to your background jobs. So, to make your background jobs compatible with `Career::Task`, you'll want the first argument to be `task_id`.
 
 ```ruby
 require "resque/errors"
@@ -44,6 +44,38 @@ class TestJob
 
     task.log "...complete"
     task.update_percent_complete(100)
+  end
+end
+```
+
+### Using Tasks in your jobs
+
+Once you has access to your task in your job, you can start updating the task within your job with methods like
+
+```ruby
+require "resque/errors"
+
+class TestJob
+  @queue = :default_queue
+
+  def self.perform(task_id, my_param_1, my_param_2)
+
+    # Log messages
+    task.log "...info message...", "info"
+    task.log "...successful message...", "success"
+    task.log "...error message...", "error"
+
+    # Update percent
+    task.update_percent_complete(50)
+    task.update_percent_complete(100)
+
+    # Update status
+    task.update_status('scheduled')
+    task.update_status('started') # which also sets the started_at timestamp
+    task.update_status('failed')
+    task.update_status('interrupted')
+    task.update_status('canceled')
+    task.update_status('complete') # which also sets the completed_at timestamp
   end
 end
 ```
