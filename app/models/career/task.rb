@@ -33,6 +33,15 @@ module Career
       #TaskLogEntriesChannel.broadcast_to(self, task_log_entry)
     end
 
+    def set_started
+      self.set_status('started')
+    end
+
+    def set_complete
+      self.set_status('complete')
+    end
+    
+
     def set_status(status)
       updated_attributes = { status: status }
       
