@@ -1,0 +1,33 @@
+body.career-layout {
+  .progress-bar {
+    position: relative;
+    height: 25px;
+    width: 100%;
+    background: #bbb;
+    border-radius: 25px;
+    overflow: hidden;
+
+    .progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background: $color-success-600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .progress-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

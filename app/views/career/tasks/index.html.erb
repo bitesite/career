@@ -1,28 +1,37 @@
-<h1>Tasks</h1>
+<div id="career-tasks-index">
+  <h1>Tasks</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th>Started at</th>
-      <th>Completed at</th>
-      <th>% complete</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tasks.each do |task| %>
+  <table class='standard-table'>
+    <thead>
       <tr>
-        <td><%= task.id %></td>
-        <td><%= task.description %></td>
-        <td><%= task.status %></td>
-        <td><%= task.started_at %></td>
-        <td><%= task.completed_at %></td>
-        <td><%= task.percent_complete %></td>
-        <td><%= link_to 'View', task %></td>
+        <th>ID</th>
+        <th>Job</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Started at</th>
+        <th>Completed at</th>
+        <th>Progress</th>
+        <th></th>
       </tr>
-    <% end %>    
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+        <tr>
+          <td><%= task.id %></td>
+          <td><%= task.class_name %></td>
+          <td><%= task.description %></td>
+          <td><%= task.status %></td>
+          <td><%= task.started_at %></td>
+          <td><%= task.completed_at %></td>
+          <td>
+            <div class='progress-bar'>
+              <div class='progress' style='width: <%= task.percent_complete %>%;'></div>
+              <div class='progress-text'><%= task.percent_complete %>%</div>
+            </div>
+          </td>
+          <td><%= link_to 'View', task %></td>
+        </tr>
+      <% end %>    
+    </tbody>
+  </table>
+</div>

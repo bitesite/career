@@ -1,0 +1,9 @@
+body.career-layout {
+  a {
+    color: $color-primary-500;
+
+    &:hover {
+      color: $color-primary-300;
+    }
+  }
+}

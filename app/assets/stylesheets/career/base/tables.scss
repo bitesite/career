@@ -1,0 +1,27 @@
+body.career-layout {
+
+  table.standard-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+      tr {
+        border-bottom: 2px solid black;
+
+        th {
+          padding: 5px;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid #ddd;
+
+        td {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

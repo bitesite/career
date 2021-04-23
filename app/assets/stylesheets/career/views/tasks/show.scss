@@ -1,0 +1,25 @@
+body.career-layout {
+  #career-tasks-show {
+    .progress-bar {
+      margin: 20px 0;
+    }
+
+    .log {
+      height: 300px;
+      background: black;
+      color: white;
+      font-family: Courier, monospace;
+      font-size: 14px;
+      padding: 5px;
+      overflow: scroll;
+
+      .log-line {
+        white-space: nowrap;
+      }
+    }
+
+    .back-container {
+      margin: 10px 0;
+    }
+  }
+}

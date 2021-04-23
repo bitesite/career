@@ -1,16 +1,27 @@
-<h1>Task <%= @task.id %></h1>
+<div id="career-tasks-show">
+  <h1>Task <%= @task.id %></h1>
 
-<%= @task.description %><br />
-<%= @task.status %><br />
-<%= @task.started_at %><br />
-<%= @task.completed_at %><br />
-<%= @task.percent_complete %><br />
+  Description: <%= @task.description %><br />
+  Job Class Name: <%= @task.class_name %><br />
+  Status: <%= @task.status %><br />
+  Started: <%= @task.started_at %><br />
+  Completed:<%= @task.completed_at %><br />
+  
+  <div class='progress-bar'>
+    <div class='progress' style='width: <%= @task.percent_complete %>%;'></div>
+    <div class='progress-text'><%= @task.percent_complete %>%</div>
+  </div>
 
-<h2>Log</h2>
-<div>
-  <% @task.task_log_entries.chronological.each do |task_log_entry| %>
-    <div>
-      <%= "#{[task_log_entry.created_at]} - #{task_log_entry.content}" %>
-    </div>
-  <% end %>
+  <h2>Log</h2>
+  <div class='log'>
+    <% @task.task_log_entries.chronological.each do |task_log_entry| %>
+      <div class='log-line'>
+        <%= "#{[task_log_entry.created_at]} - #{task_log_entry.content}" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class='back-container'>
+    <%= link_to 'Back to tasks', tasks_path %>
+  </div>
 </div>
