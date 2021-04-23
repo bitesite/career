@@ -21,8 +21,48 @@ Or install it yourself as:
 $ gem install career
 ```
 
+### Setup CSS
+
+Add the following line to your Manifest if you're using Rails 6
+
+```
+# app/assets/config/manifest.js
+//= link career/application.css
+```
+
 ## Contributing
 Contribution directions go here.
+
+### Development
+
+#### Testing
+
+To run rspec, be sure to
+
+1. Setup your dummy database
+
+```
+cd spec/dummy
+cp config/database.yml.tmpl config/database.yml
+```
+
+Then edit the `config/database.yml` for your database and run `rails db:create`
+
+2. Copy engine migrations
+
+The main engine migrations are managed in the top level directory and need to be copied down to `spec`:
+
+```
+cd spec/dummy
+rails career:install:migrations
+rails db:migrate
+```
+
+*Note: We use `ActiveRecord::Migrator.migrations_paths = './dummy/db/migrate'` to deal with the new timestamp that gets created when copying migrations.*
+
+3. Run rspec
+
+At this point, you should be able to run `rspec` from the root folder.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
