@@ -111,7 +111,7 @@ $ gem install career
 This gem comes packaged with some database tables so be sure to run your migrations:
 
 ```
-rails create:install:migrations
+rails career:install:migrations
 rails db:migrate
 ```
 
