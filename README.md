@@ -21,6 +21,15 @@ Or install it yourself as:
 $ gem install career
 ```
 
+### Run Migrations
+
+This gem comes packaged with some database tables so be sure to run your migrations:
+
+```
+rails create:install:migrations
+rails db:migrate
+```
+
 ### Setup CSS
 
 Add the following line to your Manifest if you're using Rails 6
