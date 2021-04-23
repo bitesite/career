@@ -90,6 +90,13 @@ end
 
 
 ## Installation
+
+### Install Resque
+
+Currently Career only support `Resque` background jobs. So install [Resque](https://github.com/resque/resque).
+
+### Install Career
+
 Add this line to your application's Gemfile:
 
 ```ruby
