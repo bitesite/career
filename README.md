@@ -31,6 +31,7 @@ class TestJob
   @queue = :default_queue
 
   def self.perform(task_id, my_param_1, my_param_2)
+    # Load Task
     task = Career::Task.find(task_id)
 
     task.log "Started my job..."
@@ -59,6 +60,8 @@ class TestJob
   @queue = :default_queue
 
   def self.perform(task_id, my_param_1, my_param_2)
+    # Load Task
+    task = Career::Task.find(task_id)
 
     # Log messages
     task.log "...info message...", "info"
