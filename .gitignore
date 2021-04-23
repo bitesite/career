@@ -17,3 +17,6 @@ spec/dummy/tmp/
 spec/dummy.byebug_history
 
 *.DS_Store
+
+# Published Gems
+career*.gem
