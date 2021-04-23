@@ -1,6 +1,8 @@
 # Career
 
-It's more than just a job, it's a career. Career provides persistent data to supplement your background jobs providing insight into things like status, percent complete, started at, and stopped at. Combined with ActionCable, it can provide a powerful UI for your background jobs.
+It's more than just a job, it's a career. 
+
+Career provides persistent data to supplement your background jobs providing insight into things like status, percent complete, started at, and stopped at. Combined with ActionCable, it can provide a powerful UI for your background jobs.
 
 ## Usage
 
