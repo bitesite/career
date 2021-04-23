@@ -1,8 +1,54 @@
 # Career
-Short description and motivation.
+
+It's more than just a job, it's a career. Career provides persistent data to supplement your background jobs providing insight into things like status, percent complete, started at, and stopped at. Combined with ActionCable, it can provide a powerful UI for your background jobs.
 
 ## Usage
-How to use my plugin.
+
+### Tasks
+
+The main model that Career introduces is tasks in the form of `Career::Task`.
+
+1. Create a task:
+
+```ruby
+task = Career::Task.create(status: 'scheduled', description: 'My task', class_name: 'MyBackgroundJob')
+```
+
+2. Enqueue the task:
+
+```ruby
+task.enqueue
+```
+
+### Writing jobs for Tasks
+
+To make your background jobs compatible with `Career::Task`, you'll want the first argument to be `task_id`.
+
+```ruby
+require "resque/errors"
+
+class TestJob
+  @queue = :default_queue
+
+  def self.perform(task_id, my_param_1, my_param_2)
+    task = Career::Task.find(task_id)
+
+    task.log "Started my job..."
+
+    # Do stuff
+
+    task.log "...finished this part of the job..."
+    task.update_percent_complete(50)
+
+    # Do Stuff
+
+    task.log "...complete"
+    task.update_percent_complete(100)
+  end
+end
+```
+
+
 
 ## Installation
 Add this line to your application's Gemfile:
