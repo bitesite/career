@@ -177,5 +177,9 @@ rails db:migrate
 
 At this point, you should be able to run `rspec` from the root folder.
 
+## Acknowledgements
+
+Career would not be possible without all the staff and clients of [BiteSite](https://www.bitesite.ca) over the years. This is something we've been tweaking a lot and finally decided to turn it into a library.
+
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
