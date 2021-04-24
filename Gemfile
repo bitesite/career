@@ -5,10 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 group :development do
-  gem 'pg'
+  gem 'pg', '0.21.0'
 end
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
-ruby '2.7.2'
+ruby '2.5.7'
 #ruby-gemset=career

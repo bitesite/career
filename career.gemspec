@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
 
   spec.test_files = Dir["spec/**/*"]
 
-  spec.add_dependency "rails", "~> 6.1.3", ">= 6.1.3.1"
-  spec.add_dependency "resque", '~> 2.0'
+  spec.add_dependency "rails", ">= 5.0.2"
+  spec.add_dependency "resque", ">= 1.0"
 
-  spec.add_development_dependency "rspec-rails", "~> 5.0"
+  spec.add_development_dependency "rspec-rails", "3.6.0"
   spec.add_development_dependency "factory_bot_rails", "~> 6.1"
 end
