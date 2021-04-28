@@ -15,7 +15,7 @@ The main model that Career introduces is tasks in the form of `Career::Task`.
 1. Create a task:
 
 ```ruby
-task = Career::Task.create(status: 'scheduled', description: 'My task', class_name: 'MyBackgroundJob')
+task = Career::Task.create(status: 'scheduled', description: 'My task', class_name: 'MyBackgroundJob', params: [param_1, param_2, param_3])
 ```
 
 2. Enqueue the task:
@@ -53,9 +53,24 @@ class TestJob
 end
 ```
 
+For your other params, just specify them after `task_id`. Then, to pass in values for those params, just specify their values in order in an array that you set as the `params` value on your Task. Confusing? Here's an example:
+
+```ruby
+# TestJob
+class TestJob
+  ...
+  def self.perform(task_id, my_param_1, my_param_2)
+  end
+end
+
+# Using TestJob
+task = Career::Task.create(status: 'scheduled', description: 'My task', class_name: 'TestJob', params: [my_param_1_value, my_param_2_value])
+task.enqueue
+```
+
 ### Using Tasks in your jobs
 
-Once you has access to your task in your job, you can start updating the task within your job with methods like
+Once you have access to your task in your job, you can start updating the task within your job with methods like
 
 ```ruby
 require "resque/errors"
@@ -87,13 +102,11 @@ class TestJob
 end
 ```
 
-
-
 ## Installation
 
 ### Install Resque
 
-Currently Career only support `Resque` background jobs. So install [Resque](https://github.com/resque/resque).
+Currently Career only supports `resque` background jobs in a `rails` environment. So install [Resque](https://github.com/resque/resque) and [Rails](https://github.com/rails/rails).
 
 ### Install Career
 
