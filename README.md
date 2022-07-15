@@ -1,6 +1,6 @@
 # Career
 
-It's more than just a job, it's a career. 
+It's more than just a job, it's a career.
 
 Career provides persistent data to supplement your background jobs providing insight into things like status, percent complete, started at, and stopped at. Combined with ActionCable, it can provide a powerful UI for your background jobs.
 
@@ -117,11 +117,13 @@ gem 'career'
 ```
 
 And then execute:
+
 ```bash
 $ bundle
 ```
 
 Or install it yourself as:
+
 ```bash
 $ gem install career
 ```
@@ -130,7 +132,7 @@ $ gem install career
 
 This gem comes packaged with some database tables so be sure to run your migrations:
 
-```
+```bash
 rails career:install:migrations
 rails db:migrate
 ```
@@ -144,9 +146,17 @@ Add the following line to your Manifest if you're using Rails 6
 //= link career/application.css
 ```
 
-### Want a free UI?
+### Editable Views
 
-If you want to use our built-in UI, then add this to your `config/routes.rb`:
+Run the following command in the root of your project to generate the views and add the appropriate routes:
+
+```bash
+rails g career:views
+```
+
+### Prebuilt Views
+
+If you would rather use our built-in UI, then add this to your `config/routes.rb`:
 
 ```
 Rails.application.routes.draw do
@@ -157,6 +167,7 @@ end
 ```
 
 ## Contributing
+
 Contribution directions go here.
 
 ### Development
@@ -184,7 +195,7 @@ rails career:install:migrations
 rails db:migrate
 ```
 
-*Note: We use `ActiveRecord::Migrator.migrations_paths = './dummy/db/migrate'` to deal with the new timestamp that gets created when copying migrations.*
+_Note: We use `ActiveRecord::Migrator.migrations_paths = './dummy/db/migrate'` to deal with the new timestamp that gets created when copying migrations._
 
 3. Run rspec
 
@@ -195,4 +206,5 @@ At this point, you should be able to run `rspec` from the root folder.
 Career would not be possible without all the staff and clients of [BiteSite](https://www.bitesite.ca) over the years. This is something we've been tweaking a lot and finally decided to turn it into a library.
 
 ## License
+
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
